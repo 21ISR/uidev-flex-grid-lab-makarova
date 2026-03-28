@@ -30,7 +30,7 @@ body {
 
 /* Хедер (флекс) */
 .header {
-    background: #ddd;
+    background: #c2c2c2;
     padding: 10px;
     display: flex;
     justify-content: space-between;
