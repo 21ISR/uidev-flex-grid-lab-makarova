@@ -8,6 +8,9 @@ body {
     font-family: Arial, sans-serif;
     background: #f0f0f0;
     height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* GRID-контейнер для всей страницы */
@@ -16,24 +19,41 @@ body {
     height: 600px;
     border: 2px solid #000;
     background: #fff;
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    grid-template-rows: 60px 1fr 40px;
+    grid-template-areas: 
+        "header header"
+        "chat-list chat-window"
+        "footer footer";
 }
 
 /* Хедер (флекс) */
 .header {
-    background: #ddd;
+    background: #c2c2c2;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    grid-area: header;
+    align-items: center;
 }
 
 /* Боковое меню чатов */
 .chat-list {
     background: #f4f4f4;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    grid-area: chat-list;
 }
 
 /* Главное окно чата */
 .chat-window {
     background: #fff;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    grid-area: chat-window;
 }
 
 /* Сообщения */
@@ -42,6 +62,10 @@ body {
     background: #eaeaea;
     padding: 10px;
     margin-bottom: 10px;
+    display:flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
 }
 
 /* Отдельное сообщение */
@@ -49,6 +73,7 @@ body {
     background: #cce5ff;
     padding: 5px;
     border-radius: 5px;
+    align-self: flex-start;
 }
 
 /* Поле ввода */
@@ -62,6 +87,8 @@ body {
     background: #ddd;
     padding: 10px;
     text-align: center;
+    grid-area: footer;
+    justify-content: center;
 }
 
 ul {
